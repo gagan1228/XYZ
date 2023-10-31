@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
+
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <style>
+
+        body{
+            background-color: #070606;
+        }
+
+        /* Custom Navbar Styles */
+        .navbar {
+            background-color: #007BFF; /* Navbar background color */
+        }
+
+        .navbar-brand {
+            color: #fff; /* Navbar brand text color */
+            font-size: 24px;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #fff; /* Hamburger icon color */
+        }
+
+        .navbar .nav-item {
+            padding: 0 15px;
+        }
+
+        .navbar .nav-link {
+            color: #fff; /* Navbar link text color */
+        }
+
+        .navbar .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .navbar .navbar-form {
+            display: flex;
+        }
+
+        .navbar .search-input {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .navbar .search-button {
+            background-color: #fff;
+            color: #007BFF;
+            border: none;
+            font-weight: bold;
+        }
+
+        /* Carousel styles */
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        /* Product card styles */
+        .product-card {
+            border: 2px solid #ccc;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            background-color: #bbbaba;
+            border-radius: 10px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            color: #000000;
+        }
+
+        .card-text {
+            font-size: 18px;
+            color: #000000;
+        }
+
+        /* .btn-primary {
+            background-color: #4287f5;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+        } */
+
+
+        /* Style for primary buttons */
+.btn.btn-primary {
+    background-color: #007bff; /* Change the background color */
+    color: #fff; /* Change the text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    text-decoration: none; /* Remove underlines for links */
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Apply rounded corners */
+    margin: 5px; /* Add spacing between buttons */
+}
+
+/* Hover effect for primary buttons */
+.btn.btn-primary:hover {
+    background-color: #0056b3; /* Change the background color on hover */
+    color: #fff; /* Change the text color on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add a smooth transition effect */
+}
+
+/* Additional styles for specific button classes, e.g., "Add to Cart" */
+.btn.btn-primary.add-to-cart {
+    background-color: #28a745; /* Change the background color for "Add to Cart" button */
+}
+
+/* Additional styles for specific button classes, e.g., "Buy Now" */
+.btn.btn-primary.buy-now {
+    background-color: #ffc107; /* Change the background color for "Buy Now" button */
+}
+
+
+
+            /* Footer styles */
+    .footer {
+        background-color: #000000; /* Background color for the footer */
+        padding: 20px 0;
+        text-align: center;
+        color: #fff; /* Text color for the footer */
+    }
+
+    .footer a {
+        color: #030303; /* Link color in the footer */
+        text-decoration: none;
+    }
+
+    .footer .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer .col {
+        padding: 10px;
+    }
+
+        
+    </style>
+
+    <title>Shopping Site</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a width="1000px" class="navbar-brand" href="#">My Store</a>
+            <!-- Your navigation links go here -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary py-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item">
+                                <a class="nav-link text-white active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-light" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            
+        </div>
+    </nav>
+
+
+    <div id="carouselExampleCaptions" class="carousel slide mt-5" data-bs-ride="carousel">
+        <!-- Your carousel content goes here -->
+
+        <div id="carouselExampleCaptions" class="carousel slide mt-5" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2F50-off&psig=AOvVaw0UDRr7klOESWOz_IpNWqWE&ust=1698742758744000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCNCk0Ie0nYIDFQAAAAAdAAAAABAE">
+                        <img src="https://static.vecteezy.com/system/resources/previews/000/176/401/original/vector-super-sale-offer-template-for-advertising-with-geometric-colorfu.jpg" height="500px" class="d-block w-100" alt="Image 1">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Image 1</h5>
+                        <p>Description for Image 1</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Fshoppersstopindia%2Fvideos%2Fsale-at-flat-50-off%2F615790976315482%2F&psig=AOvVaw1WYfbROXVLsTEnoDtOAnJi&ust=1698742816359000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOiznqO0nYIDFQAAAAAdAAAAABAQ">
+                        <img src="https://img.freepik.com/free-vector/big-sale-banner_23-2147972316.jpg?size=338&ext=jpg" height="500px" class="d-block w-100" alt="Image 2">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Image 2</h5>
+                        <p>Description for Image 2</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2F50-off-sign&psig=AOvVaw1WYfbROXVLsTEnoDtOAnJi&ust=1698742816359000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOiznqO0nYIDFQAAAAAdAAAAABAX">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/001/221/114/small_2x/orange-gradient-big-sale-banner.jpg" height="500px" class="d-block w-100" alt="Image 3">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Image 3</h5>
+                        <p>Description for Image 3</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+        
+    </div>
+
+<div class="row">
+
+    <div class="col">
+        <div class="card product-card">
+            <img width="300px" height="400px" src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTLgQPCCNJvwhW4_wd0_saWuDtnHEfg3vUhYahGVrbQG-VdulOzo0pLM-_kfYOSp5LYYPIycZFW8yEvRCUIVLs9RxdwaG2fzYsNse8vp_qi_VshYIHBQxUTI0k&usqp=CAE" class="card-img-top" alt="Product Name">
+            <div class="card-body">
+                <h5 class="card-title">My Store</h5>
+                <b><p class="card-text">IKIGAI : The Japanese secret</p></b>
+                <p class="card-text">Price: $29.99</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card product-card">
+            <img width="300px" height="400px" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS7Y8U4KX_gA5IUbsXR9ni4-XfLbPtopehNmjZxJfyZxzmWVR-ffo2eomQKckKsdDAX1jksVhmchMX2Xu4joNdOSG2wSTgVjgPIyINBHKlc&usqp=CAE" class="card-img-top" alt="Product Name">
+            <div class="card-body">
+                <h5 class="card-title">My Store</h5>
+                <b><p class="card-text">JUJUTSU KAISEN VOL 1</p></b>
+                <p class="card-text">Price: $10.99</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+      </div>
+    
+    <div class="col">
+      <div class="card product-card">
+          <img width="300px" height="400px" src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQrPHp7UtDTi5wjhar4HnrMUGQOSTP51XX7r0GqOPhu1yqMUP108V3AtJ6zD_jSmniHD-nLRj8LzVM3Yjr1U1DpUvul0OY9rylY_JvMOS80&usqp=CAE" class="card-img-top" alt="Product Name">
+          <div class="card-body">
+              <h5 class="card-title">My Store</h5>
+              <b><p class="card-text">Sulwe</p></b>
+              <p class="card-text">Price: $.99</p>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+          </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card product-card">
+          <img width="300px" height="400px" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTbdmgjETpkok8FP0Ve-PJ2yjqlNWIGP9vS3Jk6BP2JzybWnLR8p6-XzL-NN30zN7LSRWYyWiEaEcqTxZqi6euxyBRprEg6llySH-CZWmmc&usqp=CAE" class="card-img-top" alt="Product Name">
+          <div class="card-body">
+              <h5 class="card-title">My Store</h5>
+              <b><p class="card-text">American Psycho</p></b>
+              <p class="card-text">Price: $3.99</p>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+          </div>
+      </div>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col">
+        <div class="card product-card">
+            <img width="300px" height="400px" src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRzCyiIj2GscOzs7e9DClGFYvytwl9WyChxlsZC3liwLnvVJ5eu1zlurj2p5FWCbagOj5wSw0dzRBxd-1_xQDzvS01xdEMZKMzQKkSk32U&usqp=CAE" class="card-img-top" alt="Product Name">
+            <div class="card-body">
+                <h5 class="card-title">My Store</h5>
+                <b><p class="card-text">The Hidden Hindu</p></b>
+                <p class="card-text">Price: $49.99</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card product-card">
+            <img width="300px"height="400px" src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ8CQSWpPx42eG2q4qjFHhTnNo8gysczpSjCfjmv6zdZ7XUfN005JhKPniXHcj9PsEFIGHHH2_m8ctR-H3IXkJhwnaORst-cR-UwSaD59h8&usqp=CAE" class="card-img-top" alt="Product Name">
+            <div class="card-body">
+                <h5 class="card-title">My store</h5>
+                <b><p class="card-text">Divergent Triology</p></b>
+                <p class="card-text">Price: $13.99</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+      </div>
+    
+    <div class="col">
+      <div class="card product-card">
+          <img width="300px" height="400px" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRrYXCb_Y38Kqz5XaMChM0zFIqofu2zbmDfnUrpg8ODi01Z8bix15RYI46IgHZH1csI3Sax6zvhtVji_Nu2uVwnnpwqIYKWWjkV2btEnXqPsiue4QfVEsjiYQ&usqp=CAE" class="card-img-top" alt="Product Name">
+          <div class="card-body">
+              <h5 class="card-title">My store</h5>
+              <b><p class="card-text">Babel</p></b>
+              <p class="card-text">Price: $5.99</p>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+          </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card product-card">
+          <img width="300px"height="400px" src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTBgeaaFgD3-rlBXvgKw54sUT5vEg3hVMExGzvmdxSna3wzf7HlvSR1q6oHmJ6W72aHJAiOcg4Urdj5e6bkHkM4YaloMfUoRW8NpxtF57wwPzBVFHaH4nPsWA&usqp=CAE" class="card-img-top" alt="Product Name">
+          <div class="card-body">
+              <h5 class="card-title">My store</h5>
+              <b><p class="card-text">Roots</p></b>
+              <p class="card-text">Price: $3.99</p>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+          </div>
+      </div>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col">
+        <div class="card product-card">
+            <img width="300px" height="400px" src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS2KLlka02zTWtcfTP12PQyudMaWLn4HHRg6lVfkhO4qXVBTjvZLgjNeZdyxiDfA3JXVrOv54AYkdi_gYh-60zfIiU3zNRyOBcYRfqTri8&usqp=CAE" class="card-img-top" alt="Product Name">
+            <div class="card-body">
+                <h5 class="card-title">My store</h5>
+                <b><p class="card-text">1984</p></b>
+                <p class="card-text">Price: $8.99</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card product-card">
+            <img width="300px" height="400px" src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcT7tEPUVsPCIQnIFCL-34RbPmeI20Re1LWGMUSXsWGiNgHZUzD5lxbDmbTKbqYRxzFBxMsXbjPl6wiDiMRUUwlgH3NJNyaJjf9yQp-pdNoZZsWJhfSE7Ens5w&usqp=CAE" class="card-img-top" alt="Product Name">
+            <div class="card-body">
+                <h5 class="card-title">My store</h5>
+                <b><p class="card-text">The Psycology of money</p></b>
+                <p class="card-text">Price: $32.99</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+      </div>
+    
+    <div class="col">
+      <div class="card product-card">
+          <img width="300px" height="400px" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQwg1oRujAo2kT5tDB3ibGETzGA3CFFFAhCSPxE8GOqcXNQ2txy6hdwN6gPQ1YVSvpQv1lbVYMNEVATOs_HtYQrQ5SmDNSLo6ae7iI8Vk_5KlcPROWlnzJX&usqp=CAE" class="card-img-top" alt="Product Name">
+          <div class="card-body">
+              <h5 class="card-title">My store</h5>
+              <b><p class="card-text">Animal Farm</p></b>
+              <p class="card-text">Price: $50.99</p>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+          </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card product-card">
+          <img width="300px" height="400px" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQyevPyWtbaIitczmtFcpNCp5orXoPmrao77rcOFtOoMpjR06-PkDCfqh26OiIA_PEcfVeAuP9rR2lokY0Fh-gqm8OLtqTC5_0xSc0275qF7R-Eo6DLnCzpjA&usqp=CAE" class="card-img-top" alt="Product Name">
+          <div class="card-body">
+              <h5 class="card-title">My store</h5>
+              <b><p class="card-text">The Alchemist</p></b>
+              <p class="card-text">Price: $4.99</p>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+          </div>
+      </div>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col">
+        <div class="card product-card">
+            <img width="300px" height="400px" src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRayeCrmyWNw3xQsiLHhIyX5yGjjPUMm1TK3zXCsKUIrORvpOdxfee0yLBOQI7pQhQ_WpZul5ZmuKv9MB14bhlY-92RMgh7CuKZoYKYtxjnKUvpcS7_mwsC&usqp=CAE" class="card-img-top" alt="Product Name">
+            <div class="card-body">
+                <h5 class="card-title">My store</h5>
+                <b><p class="card-text">Orange season 1</p></b>
+                <p class="card-text">Price: $4.99</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card product-card">
+            <img width="300px" height="400px" src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQurcjxka1lxZYDcrQW8BTc0i58nGRZKOwEr8eR84UHavCRMQqxVPNuV1EMQqe9MJiP6c7nT8xDa8Am5vToKYmi47bOn2JY5xiXnAiBh--I_afLh203O4jnig&usqp=CAE" class="card-img-top" alt="Product Name">
+            <div class="card-body">
+                <h5 class="card-title">My store</h5>
+                <b><p class="card-text">Revelation</p></b>
+                <p class="card-text">Price: $9.99</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+      </div>
+     
+</div>  
+
+
+
+    
+
+
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col">Become a seller</div>
+                <div class="col">Terms & conditions</div>
+                <div class="col">&copy;Paytent</div>
+                <div class="col">Terms & Policies</div>
+                <div class="col">Help center</div>
+                <div class="col">Advertisements</div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
